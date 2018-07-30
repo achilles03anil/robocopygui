@@ -1,0 +1,7 @@
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\obj\Debug\Robocopy_GUI.frmRobocopy.resources
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\obj\Debug\Robocopy_GUI.Properties.Resources.resources
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\obj\Debug\Robocopy GUI.csproj.GenerateResource.Cache
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\bin\Debug\Robocopy GUI.exe
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\bin\Debug\Robocopy GUI.pdb
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\obj\Debug\Robocopy GUI.exe
+c:\users\achilles\documents\visual studio 2013\Projects\Robocopy GUI\Robocopy GUI\obj\Debug\Robocopy GUI.pdb
