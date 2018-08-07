@@ -44,17 +44,29 @@
             this.btnStartDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblDelete = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnDeleteLocation = new System.Windows.Forms.Button();
-            this.chkdeletelog = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblDeleteCommand = new System.Windows.Forms.Label();
             this.btnEmptyLocation = new System.Windows.Forms.Button();
             this.lblemptyFolder = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblDeleteCommand = new System.Windows.Forms.Label();
+            this.chkdeletelog = new System.Windows.Forms.CheckBox();
+            this.btnDeleteLocation = new System.Windows.Forms.Button();
+            this.lblDelete = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ScCopyDelete = new System.Windows.Forms.SplitContainer();
+            this.SCMain = new System.Windows.Forms.SplitContainer();
+            this.rbDelete = new System.Windows.Forms.RadioButton();
+            this.rbCopy = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScCopyDelete)).BeginInit();
+            this.ScCopyDelete.Panel1.SuspendLayout();
+            this.ScCopyDelete.Panel2.SuspendLayout();
+            this.ScCopyDelete.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SCMain)).BeginInit();
+            this.SCMain.Panel1.SuspendLayout();
+            this.SCMain.Panel2.SuspendLayout();
+            this.SCMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSource
@@ -139,7 +151,7 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(5, 193);
+            this.btnCopy.Location = new System.Drawing.Point(5, 201);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(134, 23);
             this.btnCopy.TabIndex = 8;
@@ -174,7 +186,7 @@
             // chkLog
             // 
             this.chkLog.AutoSize = true;
-            this.chkLog.Location = new System.Drawing.Point(8, 170);
+            this.chkLog.Location = new System.Drawing.Point(8, 177);
             this.chkLog.Name = "chkLog";
             this.chkLog.Size = new System.Drawing.Size(63, 17);
             this.chkLog.TabIndex = 11;
@@ -205,9 +217,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblCommand);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 224);
+            this.groupBox1.Size = new System.Drawing.Size(326, 239);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Copy/Move";
@@ -224,52 +237,33 @@
             this.groupBox2.Controls.Add(this.lblDelete);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.btnStartDelete);
-            this.groupBox2.Location = new System.Drawing.Point(230, 12);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 224);
+            this.groupBox2.Size = new System.Drawing.Size(209, 350);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
             // 
-            // lblDelete
+            // label4
             // 
-            this.lblDelete.AutoSize = true;
-            this.lblDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDelete.Location = new System.Drawing.Point(62, 22);
-            this.lblDelete.Name = "lblDelete";
-            this.lblDelete.Size = new System.Drawing.Size(40, 13);
-            this.lblDelete.TabIndex = 13;
-            this.lblDelete.Text = "Delete";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Command :";
             // 
-            // label5
+            // lblDeleteCommand
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Delete :";
-            // 
-            // btnDeleteLocation
-            // 
-            this.btnDeleteLocation.Location = new System.Drawing.Point(17, 38);
-            this.btnDeleteLocation.Name = "btnDeleteLocation";
-            this.btnDeleteLocation.Size = new System.Drawing.Size(134, 23);
-            this.btnDeleteLocation.TabIndex = 15;
-            this.btnDeleteLocation.Text = "Delete Location";
-            this.btnDeleteLocation.UseVisualStyleBackColor = true;
-            this.btnDeleteLocation.Click += new System.EventHandler(this.btnDeleteLocation_Click);
-            // 
-            // chkdeletelog
-            // 
-            this.chkdeletelog.AutoSize = true;
-            this.chkdeletelog.Location = new System.Drawing.Point(18, 173);
-            this.chkdeletelog.Name = "chkdeletelog";
-            this.chkdeletelog.Size = new System.Drawing.Size(63, 17);
-            this.chkdeletelog.TabIndex = 16;
-            this.chkdeletelog.Text = "Log File";
-            this.chkdeletelog.UseVisualStyleBackColor = true;
+            this.lblDeleteCommand.AutoSize = true;
+            this.lblDeleteCommand.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteCommand.Location = new System.Drawing.Point(88, 105);
+            this.lblDeleteCommand.Name = "lblDeleteCommand";
+            this.lblDeleteCommand.Size = new System.Drawing.Size(61, 13);
+            this.lblDeleteCommand.TabIndex = 20;
+            this.lblDeleteCommand.Text = "Command";
             // 
             // btnEmptyLocation
             // 
@@ -301,33 +295,115 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Empty :";
             // 
-            // label4
+            // chkdeletelog
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Command :";
+            this.chkdeletelog.AutoSize = true;
+            this.chkdeletelog.Location = new System.Drawing.Point(18, 173);
+            this.chkdeletelog.Name = "chkdeletelog";
+            this.chkdeletelog.Size = new System.Drawing.Size(63, 17);
+            this.chkdeletelog.TabIndex = 16;
+            this.chkdeletelog.Text = "Log File";
+            this.chkdeletelog.UseVisualStyleBackColor = true;
             // 
-            // lblDeleteCommand
+            // btnDeleteLocation
             // 
-            this.lblDeleteCommand.AutoSize = true;
-            this.lblDeleteCommand.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeleteCommand.Location = new System.Drawing.Point(88, 105);
-            this.lblDeleteCommand.Name = "lblDeleteCommand";
-            this.lblDeleteCommand.Size = new System.Drawing.Size(61, 13);
-            this.lblDeleteCommand.TabIndex = 20;
-            this.lblDeleteCommand.Text = "Command";
+            this.btnDeleteLocation.Location = new System.Drawing.Point(17, 38);
+            this.btnDeleteLocation.Name = "btnDeleteLocation";
+            this.btnDeleteLocation.Size = new System.Drawing.Size(134, 23);
+            this.btnDeleteLocation.TabIndex = 15;
+            this.btnDeleteLocation.Text = "Delete Location";
+            this.btnDeleteLocation.UseVisualStyleBackColor = true;
+            this.btnDeleteLocation.Click += new System.EventHandler(this.btnDeleteLocation_Click);
+            // 
+            // lblDelete
+            // 
+            this.lblDelete.AutoSize = true;
+            this.lblDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelete.Location = new System.Drawing.Point(62, 22);
+            this.lblDelete.Name = "lblDelete";
+            this.lblDelete.Size = new System.Drawing.Size(40, 13);
+            this.lblDelete.TabIndex = 13;
+            this.lblDelete.Text = "Delete";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Delete :";
+            // 
+            // ScCopyDelete
+            // 
+            this.ScCopyDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScCopyDelete.Location = new System.Drawing.Point(0, 0);
+            this.ScCopyDelete.Name = "ScCopyDelete";
+            // 
+            // ScCopyDelete.Panel1
+            // 
+            this.ScCopyDelete.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // ScCopyDelete.Panel2
+            // 
+            this.ScCopyDelete.Panel2.Controls.Add(this.groupBox2);
+            this.ScCopyDelete.Panel2Collapsed = true;
+            this.ScCopyDelete.Size = new System.Drawing.Size(326, 239);
+            this.ScCopyDelete.SplitterDistance = 202;
+            this.ScCopyDelete.TabIndex = 15;
+            // 
+            // SCMain
+            // 
+            this.SCMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SCMain.Location = new System.Drawing.Point(0, 0);
+            this.SCMain.Name = "SCMain";
+            this.SCMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // SCMain.Panel1
+            // 
+            this.SCMain.Panel1.Controls.Add(this.rbDelete);
+            this.SCMain.Panel1.Controls.Add(this.rbCopy);
+            // 
+            // SCMain.Panel2
+            // 
+            this.SCMain.Panel2.Controls.Add(this.ScCopyDelete);
+            this.SCMain.Size = new System.Drawing.Size(326, 268);
+            this.SCMain.SplitterDistance = 25;
+            this.SCMain.TabIndex = 22;
+            // 
+            // rbDelete
+            // 
+            this.rbDelete.AutoSize = true;
+            this.rbDelete.Location = new System.Drawing.Point(158, 6);
+            this.rbDelete.Name = "rbDelete";
+            this.rbDelete.Size = new System.Drawing.Size(56, 17);
+            this.rbDelete.TabIndex = 12;
+            this.rbDelete.Tag = "";
+            this.rbDelete.Text = "Delete";
+            this.rbDelete.UseVisualStyleBackColor = true;
+            this.rbDelete.CheckedChanged += new System.EventHandler(this.rbDelete_CheckedChanged);
+            // 
+            // rbCopy
+            // 
+            this.rbCopy.AutoSize = true;
+            this.rbCopy.Checked = true;
+            this.rbCopy.Location = new System.Drawing.Point(103, 6);
+            this.rbCopy.Name = "rbCopy";
+            this.rbCopy.Size = new System.Drawing.Size(49, 17);
+            this.rbCopy.TabIndex = 11;
+            this.rbCopy.TabStop = true;
+            this.rbCopy.Tag = "";
+            this.rbCopy.Text = "Copy";
+            this.rbCopy.UseVisualStyleBackColor = true;
+            this.rbCopy.CheckedChanged += new System.EventHandler(this.rbCopy_CheckedChanged);
             // 
             // frmRobocopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 249);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(326, 268);
+            this.Controls.Add(this.SCMain);
             this.Name = "frmRobocopy";
             this.Text = "RoboCopyGui";
             this.Load += new System.EventHandler(this.frmRobocopy_Load);
@@ -335,6 +411,15 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.ScCopyDelete.Panel1.ResumeLayout(false);
+            this.ScCopyDelete.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScCopyDelete)).EndInit();
+            this.ScCopyDelete.ResumeLayout(false);
+            this.SCMain.Panel1.ResumeLayout(false);
+            this.SCMain.Panel1.PerformLayout();
+            this.SCMain.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SCMain)).EndInit();
+            this.SCMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -366,6 +451,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblDeleteCommand;
+        private System.Windows.Forms.SplitContainer ScCopyDelete;
+        private System.Windows.Forms.SplitContainer SCMain;
+        private System.Windows.Forms.RadioButton rbDelete;
+        private System.Windows.Forms.RadioButton rbCopy;
     }
 }
 

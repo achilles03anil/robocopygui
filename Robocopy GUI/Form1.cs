@@ -107,9 +107,9 @@ namespace Robocopy_GUI
             pro.CreateNoWindow = false;
             pro.UseShellExecute = false;
             pro.WindowStyle = ProcessWindowStyle.Normal;
-           pro.RedirectStandardInput = false;
-          pro .RedirectStandardOutput = false;
-          pro.RedirectStandardError = false;
+            pro.RedirectStandardInput = false;
+            pro .RedirectStandardOutput = false;
+            pro.RedirectStandardError = false;
             //Instead of using the above two line of codes, You
 
             // can just use the code below:
@@ -149,7 +149,7 @@ namespace Robocopy_GUI
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-        CreateCommand();
+             CreateCommand();
         }
 
         private void btnDeleteLocation_Click(object sender, EventArgs e)
@@ -266,6 +266,23 @@ namespace Robocopy_GUI
         private void btnEmptyLocation_Click(object sender, EventArgs e)
         {
             lblemptyFolder.Text = GetFolderLocation();
+        }
+
+        private void rbCopy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCopy.Checked==true)
+            {
+                ScCopyDelete.Panel2Collapsed = true;
+            }
+
+        }
+
+        private void rbDelete_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbDelete.Checked == true)
+            {
+                ScCopyDelete.Panel1Collapsed = true;
+            }
         }
     }
 }
