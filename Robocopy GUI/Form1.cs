@@ -17,10 +17,18 @@ namespace Robocopy_GUI
         Process proStart;
         string sRoboCopyLocation = @"C:\Windows\System32\";
         string dLogArgument = "/log:";
+        string dDestinationSave = " /XX ";
         string sourcePath = "";
+        string TempString = "";
+       // public delegate void AddItemDelegate(string item);
         public frmRobocopy()
         {
             InitializeComponent();
+        }
+
+        public void GetData(string Name)
+        {
+            TempString = Name;
         }
 
         private void frmRobocopy_Load(object sender, EventArgs e)
@@ -86,10 +94,14 @@ namespace Robocopy_GUI
              {
                  dLogArgument = "";
              }
+             if (chkSaveDestination.CheckState==CheckState.Checked)
+             {
+                 dExtraArgument =dExtraArgument + " " + chkSaveDestination.Tag.ToString() + "";
+             }
             // c 
             // k
 
-             String dRoboFinal = " /K Robocopy.exe " + @"""" + @lblSource.Text.Trim() + @"//"" " + @"""" + @lblDestination.Text.Trim() + @"//""" + @" /V /S " + @dExtraArgument + " " + dLogArgument;
+             String dRoboFinal = " /K Robocopy.exe " + @"""" + @lblSource.Text.Trim() + @"//"" " + @"""" + @lblDestination.Text.Trim() + @"//""" + @" /V  /E /fft /R:1 /W:1 " + @dExtraArgument + " " + dLogArgument;
             // @"  /MIR";
             //Setting an instance of ProcessStartInfo class
             lblCommand.Text = dRoboFinal;
@@ -146,10 +158,103 @@ namespace Robocopy_GUI
             //}
 
         }
+      /*  public void CreateXCopyCommand()
+        {
+            //XCOPY C:/SOURCE D:/DESTINATION /E /D /C /Y
+            string dExtraArgument = " /E /D /C /Y ";
 
+            if ((lblSource.Text.ToUpper().Trim() != "SOURCE") && (lblSource.Text.Trim() != "") && Directory.Exists(lblSource.Text))
+            {
+               // lblSource.Text = lblSource.Text.ToString().Replace("\\", "//");
+
+            }
+            else
+            {
+                MessageBox.Show("Please select valid Source Folder");
+                return;
+
+            }
+            if ((lblDestination.Text.ToUpper().Trim() != "DESTINATION") && (lblDestination.Text.Trim() != "") && Directory.Exists(lblDestination.Text))
+            {
+              //  lblDestination.Text = lblDestination.Text.ToString().Replace("\\", "//");
+            }
+            else
+            {
+                MessageBox.Show("Please select valid Destination Folder ");
+                return;
+            }
+            
+            // c 
+            // k
+
+            String dRoboFinal = " /K xcopy.exe " + @"""" + @lblSource.Text.Trim()+ @""" "  + @"""" + @lblDestination.Text.Trim() + @""""  + @dExtraArgument ;
+            // @"  /MIR";
+            //Setting an instance of ProcessStartInfo class
+            lblCommand.Text = dRoboFinal;
+            // under System.Diagnostic Assembly Reference
+
+            pro = new ProcessStartInfo();
+
+            //Setting the FileName to be Started like in our
+
+            //Project we are just going to start a CMD Window.
+
+            pro.FileName = "cmd.exe";
+            pro.WorkingDirectory = sRoboCopyLocation;
+            pro.Arguments = dRoboFinal;
+            pro.CreateNoWindow = false;
+            pro.UseShellExecute = false;
+            pro.WindowStyle = ProcessWindowStyle.Normal;
+            pro.RedirectStandardInput = false;
+            pro.RedirectStandardOutput = false;
+            pro.RedirectStandardError = false;
+            //Instead of using the above two line of codes, You
+
+            // can just use the code below:
+
+            // ProcessStartInfo pro = new ProcessStartInfo("cmd.exe");
+
+            //Creating an Instance of the Process Class
+
+            // which will help to execute our Process
+
+            proStart = new Process();
+
+            //Setting up the Process Name here which we are
+
+            // going to start from ProcessStartInfo
+
+            proStart.StartInfo = pro;
+            // proStart.StartInfo.Arguments = dRoboFinal;
+
+            //Calling the Start Method of Process class to
+
+            // Invoke our Process viz 'cmd.exe'
+
+            proStart.Start();
+            //Wait for the process to be completed
+            proStart.WaitForExit();
+            //proStart.Close();
+            //proStart.StartInfo.Arguments = dRoboFinal;
+            //proStart.WaitForExit();
+            //while (!proStart.HasExited)
+            //{
+            //    //update UI
+            //    MessageBox.Show("Copy Complete");
+            //}
+
+        }
+       * */
         private void btnCopy_Click(object sender, EventArgs e)
         {
-             CreateCommand();
+            //if (rbStyleone.Checked==true)
+            //{                CreateCommand();
+            //}
+            //else
+            //{
+            //    CreateXCopyCommand();
+            //}
+             
         }
 
         private void btnDeleteLocation_Click(object sender, EventArgs e)
@@ -283,6 +388,31 @@ namespace Robocopy_GUI
             {
                 ScCopyDelete.Panel1Collapsed = true;
             }
+        }
+        private void AddItemCallbackFn(string item)
+        {
+
+            TempString=item;
+
+        }
+
+        private void btnSourceUrl_Click(object sender, EventArgs e)
+        {
+            frmLocation ilocation = new frmLocation();
+
+            //Subscribe this form for callback
+            ilocation.AddItemCallback = new frmLocation.AddItemDelegate(AddItemCallbackFn);
+            ilocation.ShowDialog();
+            lblSource.Text = TempString;
+        }
+
+        private void btnDestinationUrl_Click(object sender, EventArgs e)
+        {
+            frmLocation ilocation = new frmLocation();
+            //Subscribe this form for callback
+            ilocation.AddItemCallback = new frmLocation.AddItemDelegate(this.AddItemCallbackFn);
+            ilocation.ShowDialog();
+            lblDestination.Text = TempString;
         }
     }
 }

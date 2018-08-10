@@ -43,6 +43,9 @@
             this.chkLog = new System.Windows.Forms.CheckBox();
             this.btnStartDelete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDestinationUrl = new System.Windows.Forms.Button();
+            this.btnSourceUrl = new System.Windows.Forms.Button();
+            this.chkSaveDestination = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDeleteCommand = new System.Windows.Forms.Label();
@@ -55,8 +58,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ScCopyDelete = new System.Windows.Forms.SplitContainer();
             this.SCMain = new System.Windows.Forms.SplitContainer();
-            this.rbDelete = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbCopy = new System.Windows.Forms.RadioButton();
+            this.rbDelete = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScCopyDelete)).BeginInit();
@@ -67,6 +71,7 @@
             this.SCMain.Panel1.SuspendLayout();
             this.SCMain.Panel2.SuspendLayout();
             this.SCMain.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSource
@@ -151,7 +156,7 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Location = new System.Drawing.Point(5, 201);
+            this.btnCopy.Location = new System.Drawing.Point(6, 201);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(134, 23);
             this.btnCopy.TabIndex = 8;
@@ -205,6 +210,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDestinationUrl);
+            this.groupBox1.Controls.Add(this.btnSourceUrl);
+            this.groupBox1.Controls.Add(this.chkSaveDestination);
             this.groupBox1.Controls.Add(this.btnSource);
             this.groupBox1.Controls.Add(this.lblSource);
             this.groupBox1.Controls.Add(this.chkLog);
@@ -220,10 +228,43 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 239);
+            this.groupBox1.Size = new System.Drawing.Size(325, 245);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Copy/Move";
+            // 
+            // btnDestinationUrl
+            // 
+            this.btnDestinationUrl.Location = new System.Drawing.Point(149, 91);
+            this.btnDestinationUrl.Name = "btnDestinationUrl";
+            this.btnDestinationUrl.Size = new System.Drawing.Size(134, 23);
+            this.btnDestinationUrl.TabIndex = 14;
+            this.btnDestinationUrl.Text = "Destination Location Url";
+            this.btnDestinationUrl.UseVisualStyleBackColor = true;
+            this.btnDestinationUrl.Click += new System.EventHandler(this.btnDestinationUrl_Click);
+            // 
+            // btnSourceUrl
+            // 
+            this.btnSourceUrl.Location = new System.Drawing.Point(149, 38);
+            this.btnSourceUrl.Name = "btnSourceUrl";
+            this.btnSourceUrl.Size = new System.Drawing.Size(134, 23);
+            this.btnSourceUrl.TabIndex = 13;
+            this.btnSourceUrl.Text = "Source Location Url";
+            this.btnSourceUrl.UseVisualStyleBackColor = true;
+            this.btnSourceUrl.Click += new System.EventHandler(this.btnSourceUrl_Click);
+            // 
+            // chkSaveDestination
+            // 
+            this.chkSaveDestination.AutoSize = true;
+            this.chkSaveDestination.Checked = true;
+            this.chkSaveDestination.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSaveDestination.Location = new System.Drawing.Point(81, 178);
+            this.chkSaveDestination.Name = "chkSaveDestination";
+            this.chkSaveDestination.Size = new System.Drawing.Size(164, 17);
+            this.chkSaveDestination.TabIndex = 12;
+            this.chkSaveDestination.Tag = "/XX";
+            this.chkSaveDestination.Text = "Donot Delete Destination File";
+            this.chkSaveDestination.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -240,7 +281,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(209, 350);
+            this.groupBox2.Size = new System.Drawing.Size(96, 100);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
@@ -349,7 +390,7 @@
             // 
             this.ScCopyDelete.Panel2.Controls.Add(this.groupBox2);
             this.ScCopyDelete.Panel2Collapsed = true;
-            this.ScCopyDelete.Size = new System.Drawing.Size(326, 239);
+            this.ScCopyDelete.Size = new System.Drawing.Size(325, 245);
             this.ScCopyDelete.SplitterDistance = 202;
             this.ScCopyDelete.TabIndex = 15;
             // 
@@ -362,33 +403,31 @@
             // 
             // SCMain.Panel1
             // 
-            this.SCMain.Panel1.Controls.Add(this.rbDelete);
-            this.SCMain.Panel1.Controls.Add(this.rbCopy);
+            this.SCMain.Panel1.Controls.Add(this.groupBox3);
             // 
             // SCMain.Panel2
             // 
             this.SCMain.Panel2.Controls.Add(this.ScCopyDelete);
-            this.SCMain.Size = new System.Drawing.Size(326, 268);
-            this.SCMain.SplitterDistance = 25;
+            this.SCMain.Size = new System.Drawing.Size(325, 306);
+            this.SCMain.SplitterDistance = 57;
             this.SCMain.TabIndex = 22;
             // 
-            // rbDelete
+            // groupBox3
             // 
-            this.rbDelete.AutoSize = true;
-            this.rbDelete.Location = new System.Drawing.Point(158, 6);
-            this.rbDelete.Name = "rbDelete";
-            this.rbDelete.Size = new System.Drawing.Size(56, 17);
-            this.rbDelete.TabIndex = 12;
-            this.rbDelete.Tag = "";
-            this.rbDelete.Text = "Delete";
-            this.rbDelete.UseVisualStyleBackColor = true;
-            this.rbDelete.CheckedChanged += new System.EventHandler(this.rbDelete_CheckedChanged);
+            this.groupBox3.Controls.Add(this.rbCopy);
+            this.groupBox3.Controls.Add(this.rbDelete);
+            this.groupBox3.Location = new System.Drawing.Point(12, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(126, 40);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Copy /Delete";
             // 
             // rbCopy
             // 
             this.rbCopy.AutoSize = true;
             this.rbCopy.Checked = true;
-            this.rbCopy.Location = new System.Drawing.Point(103, 6);
+            this.rbCopy.Location = new System.Drawing.Point(10, 17);
             this.rbCopy.Name = "rbCopy";
             this.rbCopy.Size = new System.Drawing.Size(49, 17);
             this.rbCopy.TabIndex = 11;
@@ -398,11 +437,23 @@
             this.rbCopy.UseVisualStyleBackColor = true;
             this.rbCopy.CheckedChanged += new System.EventHandler(this.rbCopy_CheckedChanged);
             // 
+            // rbDelete
+            // 
+            this.rbDelete.AutoSize = true;
+            this.rbDelete.Location = new System.Drawing.Point(65, 17);
+            this.rbDelete.Name = "rbDelete";
+            this.rbDelete.Size = new System.Drawing.Size(56, 17);
+            this.rbDelete.TabIndex = 12;
+            this.rbDelete.Tag = "";
+            this.rbDelete.Text = "Delete";
+            this.rbDelete.UseVisualStyleBackColor = true;
+            this.rbDelete.CheckedChanged += new System.EventHandler(this.rbDelete_CheckedChanged);
+            // 
             // frmRobocopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 268);
+            this.ClientSize = new System.Drawing.Size(325, 306);
             this.Controls.Add(this.SCMain);
             this.Name = "frmRobocopy";
             this.Text = "RoboCopyGui";
@@ -416,10 +467,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.ScCopyDelete)).EndInit();
             this.ScCopyDelete.ResumeLayout(false);
             this.SCMain.Panel1.ResumeLayout(false);
-            this.SCMain.Panel1.PerformLayout();
             this.SCMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SCMain)).EndInit();
             this.SCMain.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -455,6 +507,10 @@
         private System.Windows.Forms.SplitContainer SCMain;
         private System.Windows.Forms.RadioButton rbDelete;
         private System.Windows.Forms.RadioButton rbCopy;
+        private System.Windows.Forms.CheckBox chkSaveDestination;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnDestinationUrl;
+        private System.Windows.Forms.Button btnSourceUrl;
     }
 }
 
