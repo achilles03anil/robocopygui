@@ -1,6 +1,8 @@
 # robocopygui
 Robocopy, or Robust File Copy, is a command line directory replication tool from Microsoft. It has the same abilities as more familiar commands such as copy and xcopy, the biggest difference is that its not a file copier, it was made to copy folders and keep them in the same form as they were.
 
+Source : https://www.windows-commandline.com/robocopy-command-syntax-examples/
+
 Copy a directory
 Example: Copy all the files in the directory D:\dir1\data to E:\backup\data. Don’t include sub directories or the files stored in those.
 
